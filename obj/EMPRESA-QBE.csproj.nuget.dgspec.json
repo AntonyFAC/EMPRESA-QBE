@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "d:\\2022\\PROGRAMACION\\CODE\\PROYECTO\\EMPRESA-QBE\\EMPRESA-QBE.csproj": {}
+    "J:\\Programas\\tareas proga\\TraFInal\\EMPRESA-QBE\\EMPRESA-QBE.csproj": {}
   },
   "projects": {
-    "d:\\2022\\PROGRAMACION\\CODE\\PROYECTO\\EMPRESA-QBE\\EMPRESA-QBE.csproj": {
+    "J:\\Programas\\tareas proga\\TraFInal\\EMPRESA-QBE\\EMPRESA-QBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\2022\\PROGRAMACION\\CODE\\PROYECTO\\EMPRESA-QBE\\EMPRESA-QBE.csproj",
+        "projectUniqueName": "J:\\Programas\\tareas proga\\TraFInal\\EMPRESA-QBE\\EMPRESA-QBE.csproj",
         "projectName": "EMPRESA-QBE",
-        "projectPath": "d:\\2022\\PROGRAMACION\\CODE\\PROYECTO\\EMPRESA-QBE\\EMPRESA-QBE.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "d:\\2022\\PROGRAMACION\\CODE\\PROYECTO\\EMPRESA-QBE\\obj\\",
+        "projectPath": "J:\\Programas\\tareas proga\\TraFInal\\EMPRESA-QBE\\EMPRESA-QBE.csproj",
+        "packagesPath": "C:\\Users\\Jeanf\\.nuget\\packages\\",
+        "outputPath": "J:\\Programas\\tareas proga\\TraFInal\\EMPRESA-QBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Jeanf\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
