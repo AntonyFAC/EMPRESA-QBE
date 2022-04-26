@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using EMPRESA_QBE.Models;
+using EMPRESA_QBE.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EMPRESA_QBE.Controllers
 {
