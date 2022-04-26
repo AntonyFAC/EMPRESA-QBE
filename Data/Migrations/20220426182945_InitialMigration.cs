@@ -66,6 +66,24 @@ namespace EMPRESA_QBE.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "t_producto",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Descripcion = table.Column<string>(type: "text", nullable: false),
+                    Precio = table.Column<decimal>(type: "numeric", nullable: false),
+                    Categoria = table.Column<string>(type: "text", nullable: false),
+                    ImageName = table.Column<string>(type: "text", nullable: false),
+                    Marca = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_t_producto", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -228,6 +246,9 @@ namespace EMPRESA_QBE.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "t_contacto");
+
+            migrationBuilder.DropTable(
+                name: "t_producto");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
