@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EMPRESA_QBE.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220426182945_InitialMigration")]
+    [Migration("20220428153050_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,10 +65,6 @@ namespace EMPRESA_QBE.Data.Migrations
                         .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
