@@ -35,7 +35,7 @@ namespace EMPRESA_QBE.Controllers
         }        
 
         [HttpPost]
-        public async Task<IActionResult> Registrar(Producto objProducto)
+        public IActionResult Registrar(Producto objProducto)
         {
             _context.Add(objProducto);
             _context.SaveChanges();
