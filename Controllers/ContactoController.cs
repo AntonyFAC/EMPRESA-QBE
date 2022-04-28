@@ -30,7 +30,7 @@ namespace EMPRESA_QBE.Controllers
         {
             _context.Add(objContacto);
             _context.SaveChanges();
-            ViewData["Message"] = "Se registro el contacto";
+            ViewData["Message"] = "Su comentario fue enviado, Gracias.";
             return View("Index");
         }
     }
