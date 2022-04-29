@@ -30,7 +30,7 @@ public class HomeController : Controller
     {
         return View();
     }
-     public IActionResult Nosotros()
+     public IActionResult AboutUs()
     {
         return View();
     }
