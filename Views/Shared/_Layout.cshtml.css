@@ -10,7 +10,9 @@ a.navbar-brand {
 a {
   color: #0077cc;
 }
-
+header{
+  color: rgb(70, 133, 158);
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -24,10 +26,10 @@ a {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #5379be;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #6278d8;
 }
 
 .box-shadow {
