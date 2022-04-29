@@ -1,0 +1,51 @@
+@model EMPRESA_QBE.Models.Producto
+
+@{
+    ViewData["Title"] = "RegistrarProd";
+}
+<h1>@ViewData["Title"]</h1>
+<div class="container">
+    <form asp-controller="Administrador" asp-action="Registrar" class="form-horizontal">
+        <div class="mb-1 row">
+                <label class="control-label col-sm-2" asp-for="Name" >Nombre: </label>
+            <div class="col-sm-5">
+                <input asp-for="Name" class="form-control form-control-sm" type="text" placeholder="Digite su nombre de producto" aria-label=".form-control-sm" />    
+            </div>
+        </div>
+
+        <div class="mb-1 row">
+            <label class="control-label col-sm-2" asp-for="Descripcion" class="control-label">Descripcion: </label>
+            <div class="col-sm-5">
+                <input asp-for="Descripcion" class="form-control form-control-sm" type="text" placeholder="Digite la descripcion del producto" aria-label=".form-control-sm" />   
+            </div>
+        </div>
+            
+        <div class="mb-1 row">
+            <label class="control-label col-sm-2" asp-for="Precio" class="control-label">Precio: </label>
+            <div class="col-sm-5">
+                <input asp-for="Precio" class="form-control form-control-sm" type="text" placeholder="Digite su precio" aria-label=".form-control-sm" />   
+            </div>
+        </div>
+
+        <div class="mb-1 row">
+            <label class="control-label col-sm-2" asp-for="ImageName" class="control-label">Image de producto: </label>
+            <div class="col-sm-5">
+                <input asp-for="ImageName" type="file" name="imagen">
+            </div> 
+        </div> 
+
+        <div class="mb-1 row">
+            <label class="control-label col-sm-2" asp-for="Marca" class="control-label">Marca: </label>
+            <div class="col-sm-5">
+                <input asp-for="Marca" class="form-control form-control-sm" type="text" placeholder="Digite su marca" aria-label=".form-control-sm" />   
+            </div> 
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Enviar</button> 
+        </div>                 
+    </form>
+</div>
+<h1>@ViewData["Message"]</h1>
+    <div>
+        <a asp-action="Administrador">Back to List</a>
+    </div>

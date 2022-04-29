@@ -24,7 +24,7 @@ namespace EMPRESA_QBE.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Catalogo()
         {
             var productos = from o in _context.DataProductos select o;
             return View(await productos.ToListAsync());

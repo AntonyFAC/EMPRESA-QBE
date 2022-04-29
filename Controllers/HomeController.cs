@@ -18,10 +18,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+    
      public IActionResult Catalogo()
     {
         return View();
@@ -30,7 +27,12 @@ public class HomeController : Controller
     {
         return View();
     }
-     public IActionResult Nosotros()
+     public IActionResult AboutUs()
+    {
+        return View();
+    }
+
+    public IActionResult Administrador()
     {
         return View();
     }

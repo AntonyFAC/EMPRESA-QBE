@@ -74,7 +74,6 @@ namespace EMPRESA_QBE.Data.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Descripcion = table.Column<string>(type: "text", nullable: false),
                     Precio = table.Column<decimal>(type: "numeric", nullable: false),
-                    Categoria = table.Column<string>(type: "text", nullable: false),
                     ImageName = table.Column<string>(type: "text", nullable: false),
                     Marca = table.Column<string>(type: "text", nullable: false)
                 },

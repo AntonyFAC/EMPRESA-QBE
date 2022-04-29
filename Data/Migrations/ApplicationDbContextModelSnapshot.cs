@@ -64,10 +64,6 @@ namespace EMPRESA_QBE.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("text");

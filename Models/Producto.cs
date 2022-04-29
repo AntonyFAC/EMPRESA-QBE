@@ -15,16 +15,20 @@ namespace EMPRESA_QBE.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("id")]
         public int Id { get; set; }
+
+        [Column("Name")]
         public string Name { get; set; }
 
+        [Column("Descripcion")]
         public string Descripcion { get; set; }
 
+        [Column("Precio")]
         public Decimal Precio { get; set; }
 
-        public String Categoria { get; set; }
-
+        [Column("ImageName")]
         public String ImageName { get; set; }
 
+        [Column("Marca")]
         public String Marca { get; set; }
     
     }
