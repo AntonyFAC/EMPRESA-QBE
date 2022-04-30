@@ -1,5 +1,5 @@
 # EMPRESA-QBE
-Creacion del Proyecto mvc en visual code
+Creacion del Proyecto mvc en visual studio code
 
 1. git clone https://github.com/AntonyFAC/EMPRESA-QBE.git
 2. dotnet new mvc --auth Individual
