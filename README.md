@@ -1,8 +1,8 @@
 # EMPRESA-QBE
 Creacion del Proyecto .net en visual code
 
- -git clone https://github.com/AntonyFAC/EMPRESA-QBE.git
- -dotnet new mvc --auth Individual
- -dotnet tool install --global dotnet-aspnet-codegenerator --version 6.0.2
- -add .gitignore
+1. git clone https://github.com/AntonyFAC/EMPRESA-QBE.git
+2. dotnet new mvc --auth Individual
+3. dotnet tool install --global dotnet-aspnet-codegenerator --version 6.0.2
+4. add .gitignore
 
