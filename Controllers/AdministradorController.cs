@@ -24,12 +24,12 @@ namespace EMPRESA_QBE.Controllers
             _logger = logger;
         }
 
-       [Route("ruta1")]
+       [Route("Menu")]
         public IActionResult Administrador(){
             return View();
         }
 
-        [Route("ruta2")]
+        [Route("Productos")]
         public IActionResult RegistrarProd(){
             return View();
         }        
