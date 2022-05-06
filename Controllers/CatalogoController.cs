@@ -24,10 +24,14 @@ namespace EMPRESA_QBE.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Catalogo()
+        public async Task<IActionResult> Catalogo(string? searchString)
         {
             var productos = from o in _context.DataProductos select o;
+            if(!String.IsNullOrEmpty(searchString)){
+                productos = productos.Where(s => s.Nombre.Contains(searchString));
+            }
             return View(await productos.ToListAsync());
         }
+        
     }
 }
