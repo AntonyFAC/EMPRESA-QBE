@@ -28,7 +28,7 @@ namespace EMPRESA_QBE.Controllers
         {
             var productos = from o in _context.DataProductos select o;
             if(!String.IsNullOrEmpty(searchString)){
-                productos = productos.Where(s => s.Nombre.Contains(searchString));
+                productos = productos.Where(s => s.Name.Contains(searchString));
             }
             return View(await productos.ToListAsync());
         }
