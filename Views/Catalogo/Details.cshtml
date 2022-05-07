@@ -4,8 +4,8 @@
 }
 <form asp-controller="Catalogo" asp-action="Add">
     <h1 class="text-center">Detalles</h1>
-    <div class="container">
-        <div class="col-sm-4">
+    <div class="row">
+        <div class="col-md-4">
             <div class="card mb-3 border-warning">
                 <div class="card-body">
                     <div class="card-img-actions">
@@ -19,9 +19,10 @@
                     <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
                     <p class="card-text">@Html.DisplayFor(model => model.Marca)</p>
                     <h5 class="card-title">@Html.DisplayFor(model => model.Precio)</h5>
-                    <a class="btn btn-primary" asp-action="Add" asp-route-id="Id">AGREGAR</a>
+                    <a class="btn btn-primary" asp-action="Catalogo">Regresar a Catalogo</a>
                 </div>
             </div>
         </div>
+
     </div>
 </form>
