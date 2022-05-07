@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 namespace EMPRESA_QBE.Controllers
 {
-    [Route("[controller]")]
     public class CatalogoController : Controller
     {
         private readonly ILogger<CatalogoController> _logger;
@@ -44,7 +43,7 @@ namespace EMPRESA_QBE.Controllers
             return View(objProduct);
         }
 
-        public async Task<IActionResult> Add(int? id){
+        public async Task<IActionResult> Agregar(int? id){
 
             var userID = _userManager.GetUserName(User);
             if(userID == null){
@@ -60,10 +59,10 @@ namespace EMPRESA_QBE.Controllers
                 proforma.UserID = userID;
                 _context.Add(proforma);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewData["Message"] = $"Se agrego {proforma.Producto.Descripcion}";
+                return RedirectToAction("Catalogo");
             }
 
         }
-        
     }
 }
