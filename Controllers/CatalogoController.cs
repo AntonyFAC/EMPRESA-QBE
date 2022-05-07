@@ -8,10 +8,11 @@ using Microsoft.Extensions.Logging;
 using EMPRESA_QBE.Models;
 using EMPRESA_QBE.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 
 namespace EMPRESA_QBE.Controllers
 {
-    [Route("[controller]")]
     public class CatalogoController : Controller
     {
         private readonly ILogger<CatalogoController> _logger;
@@ -33,5 +34,14 @@ namespace EMPRESA_QBE.Controllers
             return View(await productos.ToListAsync());
         }
         
+        public async Task<IActionResult> Details(int? id)
+        {
+            Producto objCatalog = await _context.DataProductos.FindAsync(id);
+            if(objCatalog == null){
+                return NotFound();
+            }
+            return View(objCatalog);
+        }
+
     }
 }
