@@ -49,7 +49,7 @@ namespace EMPRESA_QBE.Controllers
             if(userID == null){
                 ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
                 List<Producto> productos = new List<Producto>();
-                return  View("Index",productos);
+                return  View("Catalogo",productos);
             }else{
                 var producto = await _context.DataProductos.FindAsync(id);
                 Proforma proforma = new Proforma();
