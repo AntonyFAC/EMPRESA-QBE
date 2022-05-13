@@ -8,10 +8,10 @@ using Microsoft.Extensions.Logging;
 using EMPRESA_QBE.Data;
 using EMPRESA_QBE.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace EMPRESA_QBE.Controllers
 {
-    [Route("[controller]")]
     public class PagoController : Controller
     {
         private readonly ApplicationDbContext _context;
