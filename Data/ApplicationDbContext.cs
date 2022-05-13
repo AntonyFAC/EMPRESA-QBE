@@ -12,4 +12,7 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<EMPRESA_QBE.Models.Contacto> DataContactos { get; set; }
     public DbSet<EMPRESA_QBE.Models.Producto> DataProductos { get; set; }
     public DbSet<EMPRESA_QBE.Models.Proforma> DataProforma { get; set; }
+    public DbSet<EMPRESA_QBE.Models.Pago> DataPago { get; set; }
+    public DbSet<EMPRESA_QBE.Models.Pedido> DataPedido { get; set; }
+    public DbSet<EMPRESA_QBE.Models.DetallePedido> DataDetallePedido { get; set; }
 }
