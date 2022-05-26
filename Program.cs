@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using EMPRESA_QBE.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using EMPRESA_QBE.Integration.SendMailIntegration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+
+builder.Services.AddSingleton<SendMailIntegration>();
 
 var app = builder.Build();
 
