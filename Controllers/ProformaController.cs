@@ -10,6 +10,7 @@ using EMPRESA_QBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.Dynamic;
+using EMPRESA_QBE.util;
 
 namespace EMPRESA_QBE.Controllers
 {    
@@ -30,6 +31,8 @@ namespace EMPRESA_QBE.Controllers
         }
 
         public async Task<IActionResult> Index(){
+            var producto  = util.SessionExtensions.Get<Producto>(HttpContext.Session,"Producto"); 
+
             var userID = _userManager.GetUserName(User);
             var items = from o in _context.DataProforma select o;
             items = items.
