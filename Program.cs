@@ -25,7 +25,15 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+var configuration = new ConfigurationBuilder()
+     .SetBasePath(Directory.GetCurrentDirectory())
+     .AddJsonFile("appsettings.json", false, true)
+     .Build();
 
+var host = new WebHostBuilder()
+     .UseConfiguration(configuration)
+     .UseKestrel()
+     .UseStartup<StartupBase>();
 
 builder.Services.AddSingleton<SendMailIntegration>();
 

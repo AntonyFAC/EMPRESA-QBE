@@ -12,23 +12,32 @@ using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace EMPRESA_QBE.Integration.SendMailIntegration
 {
     public class SendMailIntegration
     {
+        private readonly IConfiguration Configuration;
+
+        public SendMailIntegration(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public const string SEND_SENDGRID="SENDGRID";
         public const string SEND_REST="REST";
 
-        private string ACCESS_TOKEN ="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";
-        private string From = "ventas@qbe.net.pe"; // settings\sender authentification
+        private string ACCESS_TOKEN = "";
+        private string From = "elagunau@intensiveclinical.net.pe"; // settings\sender authentification
         private string FromLabel = "Mail Service"; 
 
         private const string URL_API_SENDGRID = "https://api.sendgrid.com/v3/mail/send";
 
 
         public async Task SendMail(string correoDestino,string userDestino,string titulo, string contenido,string method){
-          //  ACCESS_TOKEN = System.Environment.GetEnvironmentVariables()["SENDGRID_KEY"].ToString();
+            ACCESS_TOKEN = Configuration.GetValue<string>("SendgridKey");
+            
             if(method.Equals(SEND_SENDGRID)){
                 await SendMailSengrid(correoDestino,userDestino, titulo, contenido);
             }else{
