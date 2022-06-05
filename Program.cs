@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using EMPRESA_QBE.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using EMPRESA_QBE.Integration.SendMailIntegration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
@@ -23,6 +25,17 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+var configuration = new ConfigurationBuilder()
+     .SetBasePath(Directory.GetCurrentDirectory())
+     .AddJsonFile("appsettings.json", false, true)
+     .Build();
+
+var host = new WebHostBuilder()
+     .UseConfiguration(configuration)
+     .UseKestrel()
+     .UseStartup<StartupBase>();
+
+builder.Services.AddSingleton<SendMailIntegration>();
 
 var app = builder.Build();
 

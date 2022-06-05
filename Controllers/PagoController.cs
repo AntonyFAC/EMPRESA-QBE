@@ -10,18 +10,23 @@ using EMPRESA_QBE.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
+using EMPRESA_QBE.Integration.SendMailIntegration;
+
 namespace EMPRESA_QBE.Controllers
 {
     public class PagoController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SendMailIntegration _sengrid;
 
         public PagoController(ApplicationDbContext context,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager,
+            SendMailIntegration sengrid)
         {
             _context = context;
             _userManager = userManager;
+            _sengrid = sengrid;
         }
 
         public IActionResult Create(Decimal monto)
@@ -72,6 +77,7 @@ namespace EMPRESA_QBE.Controllers
             _context.SaveChanges();
 
             ViewData["Message"] = "El pago se ha registrado";
+
             return View("Create");
         }
     }

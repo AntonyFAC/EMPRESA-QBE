@@ -6,8 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EMPRESA_QBE.Models
 {
-    public class Pedido
-    {
          [Table("t_order")]
         public class Pedido
         {
@@ -24,5 +22,4 @@ namespace EMPRESA_QBE.Models
             public String Status { get; set; }
 
         }
-    }
 }

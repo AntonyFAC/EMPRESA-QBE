@@ -8,6 +8,8 @@ using EMPRESA_QBE.Models;
 using EMPRESA_QBE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using EMPRESA_QBE.util;
+
 namespace EMPRESA_QBE.Controllers
 {
     public class CatalogoController : Controller
@@ -46,12 +48,16 @@ namespace EMPRESA_QBE.Controllers
         public async Task<IActionResult> Agregar(int? id){
 
             var userID = _userManager.GetUserName(User);
+
             if(userID == null){
                 ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
                 List<Producto> productos = new List<Producto>();
                 return  View("Catalogo",productos);
             }else{
                 var producto = await _context.DataProductos.FindAsync(id);
+
+                util.SessionExtensions.Set<Producto>(HttpContext.Session,"Producto", producto);
+
                 Proforma proforma = new Proforma();
                 proforma.Producto = producto;
                 proforma.Precio = producto.Precio;
