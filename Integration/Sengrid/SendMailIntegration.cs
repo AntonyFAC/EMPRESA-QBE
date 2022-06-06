@@ -29,15 +29,15 @@ namespace EMPRESA_QBE.Integration.SendMailIntegration
         public const string SEND_REST="REST";
 
         private string ACCESS_TOKEN = "";
-        private string From = "elagunau@intensiveclinical.net.pe"; // settings\sender authentification
+        private string From = "ventas@qbe.net.pe"; // settings\sender authentification
         private string FromLabel = "Mail Service"; 
 
         private const string URL_API_SENDGRID = "https://api.sendgrid.com/v3/mail/send";
 
 
-        public async Task SendMail(string correoDestino,string userDestino,string titulo, string contenido,string method){
-            ACCESS_TOKEN = Configuration.GetValue<string>("SendgridKey");
-            
+        public async Task SendMail(string correoDestino,string userDestino,string titulo, string contenido,string method) {
+            ACCESS_TOKEN = System.Environment.GetEnvironmentVariables()["SENDGRID_KEY"].ToString();
+
             if(method.Equals(SEND_SENDGRID)){
                 await SendMailSengrid(correoDestino,userDestino, titulo, contenido);
             }else{
