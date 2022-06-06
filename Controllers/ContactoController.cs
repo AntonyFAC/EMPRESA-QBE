@@ -39,7 +39,7 @@ namespace EMPRESA_QBE.Controllers
             await _sengrid.SendMail(objContacto.Email,
                 objContacto.Name,
                 "Bienvenido a QBE",
-                "Revisaremos su consulta en breves momentos y le responderemos",
+                "Revisaremos su consulta en breves momentos le responderemos",
                 SendMailIntegration.SEND_SENDGRID);
 
 
