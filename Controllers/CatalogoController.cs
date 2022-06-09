@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using EMPRESA_QBE.util;
 
+
 namespace EMPRESA_QBE.Controllers
 {
     public class CatalogoController : Controller
