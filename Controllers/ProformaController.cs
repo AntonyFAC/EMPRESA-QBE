@@ -27,7 +27,6 @@ namespace EMPRESA_QBE.Controllers
             _context = context;
             _logger = logger;
             _userManager = userManager;
-
         }
 
         public async Task<IActionResult> Index(){
@@ -61,28 +60,56 @@ namespace EMPRESA_QBE.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Edit(int? id){
-            Proforma proformaModel = await _context.DataProforma.FindAsync(id);
-
-            if(proformaModel == null){
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
                 return NotFound();
             }
 
-            return View(proformaModel);
-        }
-
-        public async Task<IActionResult> Update(int? id){
-            Proforma proformaModel = await _context.DataProforma.FindAsync(id);
-
-            if(proformaModel == null){
+            var proforma = await _context.DataProforma.FindAsync(id);
+            if (proforma == null)
+            {
                 return NotFound();
             }
-            //falta revisar el tema del editar
-            proformaModel.Cantidad = 5;
-            _context.DataProforma.Update(proformaModel);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("Edit",new {id =proformaModel.Id} );
+            return View(proforma);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Cantidad,Precio,UserID")] Proforma proforma)
+        {
+            if (id != proforma.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(proforma);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProformaExists(proforma.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(proforma);
+        }
+        private bool ProformaExists(int id)
+        {
+            return _context.DataProforma.Any(e => e.Id == id);
+        }
+    
     }
 }
