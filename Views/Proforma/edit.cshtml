@@ -12,7 +12,8 @@
                   <h5 class="card-title">@Html.DisplayFor(model => model.Producto)</h5>
                     <label asp-for="@Model.Cantidad" class="control-label"></label>
                     <input asp-for="@Model.Cantidad" class="form-control" type="number"/>
-                  <a class="btn btn-primary mt-3" asp-action="Update" asp-route-id="@Model.Id">Add</a>
+                  <a class="btn btn-primary mt-3" asp-action="Update" asp-route-id="@Model.Id">Agregar</a>
+                  <a class="btn btn-success mt-3" asp-action="Index" asp-route-id="@Model.Id">Regresar</a>
                 </div>
               </div>
             </div>
