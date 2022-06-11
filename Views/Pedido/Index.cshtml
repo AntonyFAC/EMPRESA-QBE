@@ -37,9 +37,18 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                 <button type="button" class="btn btn-outline-success">
+                    <a asp-action="Edit" asp-route-id="@item.ID">Editar</a>
+                </button>
+                <button type="button" class="btn btn-outline-primary">
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalles</a> 
+                </button>
+                <button type="button" class="btn btn-outline-danger">
+                    <a asp-action="Delete" asp-route-id="@item.ID">Borrar</a>
+                </button>
+                 
+                 
+               
             </td>
         </tr>
 }
